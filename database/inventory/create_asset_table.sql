@@ -1,3 +1,7 @@
+USE inventory
+GO
+-- SELECT * FROM asset_upload
+
 CREATE TABLE assets(
     uuid UNIQUEIDENTIFIER NULL DEFAULT NEWID(), -- Allow NULL and auto-generate UUID not if provided
     index_key INT IDENTITY(1,1) NOT NULL, -- Auto-incrementing identity column
@@ -56,7 +60,7 @@ BEGIN
     SELECT 
         i.uuid AS log_id, -- Use the UUID column
         JSON_QUERY((SELECT i.* FOR JSON PATH, WITHOUT_ARRAY_WRAPPER)) AS change_log,
-        i.update_by AS update_by, -- Pass through the updated_by column
+        COALESCE(i.update_by, 'System') AS update_by, -- Fallback to 'System' if update_by is NULL
         'assets' AS table_name -- Hardcode the table name
     FROM inserted i
     WHERE i.uuid IS NOT NULL; -- Ensure UUID is not NULL
@@ -87,13 +91,13 @@ BEGIN
                 (SELECT i.* FOR JSON PATH, WITHOUT_ARRAY_WRAPPER) AS after_values
             FOR JSON PATH, WITHOUT_ARRAY_WRAPPER
         )) AS change_log, -- Log before and after values as JSON
-        i.update_by AS update_by, -- Pass through the updated_by column
+        COALESCE(i.update_by, 'System') AS update_by, -- Fallback to 'System' if update_by is NULL
         'assets' AS table_name, -- Hardcode the table name
         GETDATE() AS timestamp -- Add the current timestamp
     FROM inserted i
     INNER JOIN deleted d ON i.uuid = d.uuid; -- Match updated rows
 
-    -- Step 3: Update the `change_log` in `sales_order` with the most recent log reference
+    -- Step 3: Update the `change_log` in `assets` with the most recent log reference
     UPDATE ass
     SET ass.change_log = 'Updated on ' + CONVERT(NVARCHAR, GETDATE(), 120) + ' Log key: (' + al.reference_key + ')'
     FROM assets ass
