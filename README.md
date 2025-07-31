@@ -77,14 +77,14 @@ The Dynamic Gaming Solutions Asset Database Includes -
 1) Types:
     - Table - Simple rows and columns to display data, similar to an Excel table setup.
     - Deck - Similar to a Table, Decks come in row formats, but only show basic information. Unlike a table, a Deck can store reference links and reference tables directly, rather than requiring a detail view to hold that information.
-    - Gallery - Like a Deck, it only shows limited information. The information is limited to the "[Label](#google-appsheet-label)" and an image. All other information is pulled from a Detail view.
+    - Gallery - Like a Deck, it only shows limited information. The information is limited to the "[Label](#label)" and an image. All other information is pulled from a Detail view.
     - Map - If addressed or longitude & latitude columns are available, then a map can show the location of entries on an integrated Google Maps view.
     - Calendar - If date information is available, then a calendar is available with both start and end dates as options. If time is also available, then start and end times are also available. **Time options cannot be applied without a date.**
-    - Chart - Gives multiple chart options to plot numerical data. The non-image "[Label](#google-appsheet-label)" column is used to mark the data, and multiple number columns can be used to display data and relations for comparisons. 
+    - Chart - Gives multiple chart options to plot numerical data. The non-image "[Label](#label)" column is used to mark the data, and multiple number columns can be used to display data and relations for comparisons. 
     - Card - Gives both simple information and image options that can be in a single view, along with options for up to four actions.
     - Onboarding - Takes data and prompts the individual to run through each row individually. This is useful for basic instructions, or for introducing new views or features.
     - Dashboard - This can host multiple views that would not normally be viewable together in one view. All the above mentioned view types can be shown in a dashboard, and accessed independently from it.
-    - Detail - A reference view based on the information in the data set of the view currently displayed. This allows users to drill down to show as much information as needed for each row. Detail views cannot be opened in Dashboards, but are one of the view that can be shown concurrently in other views. Detail views will appear on the right side of the screen when an entry is selected. Detail views can also link and display [references](#google-appsheet-references) for the data within the view.
+    - Detail - A reference view based on the information in the data set of the view currently displayed. This allows users to drill down to show as much information as needed for each row. Detail views cannot be opened in Dashboards, but are one of the view that can be shown concurrently in other views. Detail views will appear on the right side of the screen when an entry is selected. Detail views can also link and display [references](#references) for the data within the view.
 
 *<a>Virtual Column</a>*
 
