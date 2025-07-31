@@ -144,4 +144,76 @@ The Slot Master AppSheet View pulls from the [Slot Master View](#3-slot-master-v
 
 The casino_id in the Slot Master AppSheet View can pull any information from the casinos data set. As mentioned in the [glossary](#1-glossary), this is done by setting unique IDs for each casino, labeled **reference_key**. The reference_key is set as the [key](#key) in AppSheets, and the same key is what is passed through with Slot Master View.
 
-> *e.g, 4 Bears Casino & Lodge has the reference_key "CT-00139", along with all information that pertains to 4 Bears Casino & Lodge as a property. The cabinet with the serial number BB-10725 has CT-00139 set as the casino_id. When casino_id is set as a reference to Casinos, casino_id searches Casinos to find the key that matches, and returns the label, which is the casino's name*
+> *e.g, 4 Bears Casino & Lodge has the reference_key "CT-00139", along with all information that pertains to 4 Bears Casino & Lodge as a property. The cabinet with the serial number BB-10725 has CT-00139 set as the casino_id. When casino_id is set as a reference to Casinos, casino_id searches Casinos to find the key that matches, and returns the label, which is the casino's name.*
+
+Because of this, if a user wished to update the information of a single reference, Theme for example, instead of searching for every instance of that theme within Slot Master, the user could simply update the Theme in the Theme data set. This also means that any data related to the Theme data set can also be referenced.
+
+***Slot Master Reference List***</br>
+*The numbers next to each header is the call number for the list. Clicking on the superscript number matching it next to a value ending in "ID" will jump you back to the list it represents. This is how references work. From Slot Master at the bottom, you could jump to any table and all the table's data without scrolling.*
+
+- #### *Tribes [1]*
+    - Tribe Name
+    - Master Revenue Reference
+    - State ID <sup>[5](#states-5)</sup>
+
+- #### *Vendors [2]*
+    - Vendor Name
+
+- #### *Cabinets [3]*
+    - Cabinet Name
+    - Vendor ID <sup>[2](#vendors-2)</sup>
+
+- #### *Themes [4]*
+    - Theme Name
+    - Vendor ID <sup>[2](#vendors-2)</sup>
+    - Cabinet ID <sup>[3](#cabinets-3)</sup>
+
+- #### *States [5]*
+    - State Name
+    - State Abbreviation
+
+- #### *Bill Validators [6]*
+    - Bill Validator
+
+- #### *Printers [7]*
+    - Printer
+
+- #### *Player Tracking [8]*
+    - Player Tracker
+
+- #### *Casinos [9]*
+    - Casino Name
+    - Tribe ID <sup>[1](#tribes-1)</sup>
+    - State ID <sup>[5](#states-5)</sup>
+    - Theme ID <sup>[4](#themes-4)</sup>
+    - Cabinet ID <sup>[3](#cabinets-3)</sup>
+    - Vendor ID <sup>[2](#vendors-2)</sup>
+    - Legal Entity
+    - Master Revenue Reference
+    - Project abbreviation
+    - House Average
+    - Number of Machines
+    - Address
+    - Sales Rep
+    - Bill Validator ID <sup>[6](#bill-validators-6)</sup>
+    - Printer ID <sup>[7](#printers-7)</sup>
+    - Player Tracker ID <sup>[8](#player-tracking-8)</sup>
+    - Available Vendors <sup>[2](#vendors-2)</sup>
+
+
+## Slot Master List
+- Casino ID <sup>[9](#casinos-9)</sup>
+- Tribe ID <sup>[1](#tribes-1)</sup>
+- State ID <sup>[5](#states-5)</sup>
+- Theme ID <sup>[4](#themes-4)</sup>
+- Cabinet ID <sup>[3](#cabinets-3)</sup>
+- Vendor ID <sup>[2](#vendors-2)</sup>
+- Bill Validator ID <sup>[6](#bill-validators-6)</sup>
+- Printer ID <sup>[7](#printers-7)</sup>
+- Player Tracker ID <sup>[8](#player-tracking-8)</sup>
+- Denom
+- Hold
+- Program Media
+- Boot bios
+- Operating System
+- Conversion/Install dates
