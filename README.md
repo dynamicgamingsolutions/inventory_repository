@@ -9,6 +9,7 @@ The Dynamic Gaming Solutions Asset Database Includes -
 1. [Glossary](#1-glossary)
 2. [Slot Master (Table)](#2-slot-master-table)
 3. [Slot Master (View)](#3-slot-master-view)
+4. [Slot Master (References)](#4-slot-master-references)
 
 
 ## 1) <a>Glossary</a>
@@ -133,4 +134,14 @@ Since the Slot Master Table holds direct information, as opposed to using a [ref
 ## 3) <a>Slot Master (View)</a>
 [Top](#table-of-contents)
 
-The Slot Master View, as the name suggests, is a built out [MSSQL View](#view-mssql). Slot Master View is made by passing the [Slot Master Tabe](#2-slot-master-table) through reference tables, matching on the reference table output, rather than the reference key. When joined this way, Slot Master View returns a pre-reference version of the Slot Master Table. This is done to connect references for Themes, Cabinets, Vendors, Casinos, Tribes, States, Bill Validators, Printers, and Player Tracking Systems, and giving the user the ability to see other entries related to what they are looking at. The goal is to connect as many different data sources together, allowing the user to get a bigger picture and a more rounded understanding of where everything is.
+The Slot Master View, as the name suggests, is a built out [MSSQL View](#view-mssql). Slot Master View is made by passing the [Slot Master Tabe](#2-slot-master-table) through reference tables, matching on the reference table output, rather than the reference key. When joined this way, Slot Master View returns a pre-reference version of the Slot Master Table. This is done to connect references for Themes, Cabinets, Vendors, Casinos, Tribes, States, Bill Validators, Printers, and Player Tracking Systems in AppSheets, and giving the user the ability to see other entries related to what they are looking at. The goal is to connect as many different data sources together, allowing the user to get a bigger picture and a more rounded understanding of where everything is.
+
+## 4) <a>Slot Master (References)</a>
+[Top](#table-of-contents)
+
+The Slot Master AppSheet View pulls from the [Slot Master View](#3-slot-master-view), and uses the [Reference IDs](#references) to connect different tables. In the back end, the Reference IDs will be labeled with a relevant name, followed by "_id". 
+> *e.g. The unique reference key for **Casinos** in a table calling it will be **casino_id**.* 
+
+The casino_id in the Slot Master AppSheet View can pull any information from the casinos data set. As mentioned in the [glossary](#1-glossary), this is done by setting unique IDs for each casino, labeled **reference_key**. The reference_key is set as the [key](#key) in AppSheets, and the same key is what is passed through with Slot Master View.
+
+> *e.g, 4 Bears Casino & Lodge has the reference_key "CT-00139", along with all information that pertains to 4 Bears Casino & Lodge as a property. The cabinet with the serial number BB-10725 has CT-00139 set as the casino_id. When casino_id is set as a reference to Casinos, casino_id searches Casinos to find the key that matches, and returns the label, which is the casino's name*
