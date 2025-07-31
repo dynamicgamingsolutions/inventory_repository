@@ -4,11 +4,11 @@
 The Dynamic Gaming Solutions Asset Database Includes - 
 - Slot Master (Table)
 - Slot Master (View)
-- Asset Table (Table)
 
 ## *<a>Table of Contents</a>* 
 1. [Glossary](#1-glossary)
-1. [Slot Master (Table)](#2-slot-master-table)
+2. [Slot Master (Table)](#2-slot-master-table)
+3. [Slot Master (View)](#3-slot-master-view)
 
 
 ## 1) <a>Glossary</a>
@@ -46,7 +46,7 @@ The Dynamic Gaming Solutions Asset Database Includes -
 
 **V**
 
-#### *View*
+#### *View (MSSQL)*
  - A structured query that is accessible similarly to a [table](#table). Information is not stored in a view, but can be pulled like a table into Excel, Google AppSheet, and other sources. References, algorithems, and root calls can be used in a view, but cannot be changed later.
 
 #### Google AppSheet References
@@ -94,11 +94,11 @@ The Dynamic Gaming Solutions Asset Database Includes -
 **S**
 
 #### *<a>Slice</a>*
- - Filtered versions of data sets using formulas. When a slice is created, restrictions can be applied to the data coming through, along with filtering out entire columns as well. Slices can be applied to views exactly like datasets, including having auto generated [reference views](#references). If a data set is removed and a slice was attached, the slice will not automatically be removed. 
+ - Filtered versions of [data sets](#data) using formulas. When a slice is created, restrictions can be applied to the data coming through, along with filtering out entire columns as well. Slices can be applied to views exactly like datasets, including having auto generated [reference views](#references). If a data set is removed and a slice was attached, the slice will not automatically be removed. 
 
 **V**
 
-#### *View*
+#### *View (AppSheet)*
  - Any area that displays data is a view, and multiple views can be seen at once. Views come in several types and positions.
     1) Types:
         - Table - Simple rows and columns to display data, similar to an Excel table setup.
@@ -124,4 +124,13 @@ The Dynamic Gaming Solutions Asset Database Includes -
 ## 2) <a>Slot Master (Table)</a>
 [Top](#table-of-contents)
 
-The Slot Master Table
+The Slot Master Table stores the historical Slot Master with data spanning back to January 6th, 2023. It exists as a [Type 2 SDC](#sdc) with an "active" column that acts as a binary switch. The way the Slot Master Table is updated is through a custom program that reads the "Confirmed Work Performed" page from the Field Service Report, ***FSR***, after the work is complete and the project information has been updated. 
+
+The program, ***Dynamic Analysis***, looks for the sheet listed as Confirmed Work Performed and determines the layout of the project form, what work was performed, where the work was, and the associated serial numbers. Any work performed that would remove the current entry, such as Convert From, Removal, Bank Move From, or Reconfigure From, finds the serial number associated with the entry and changes it from "Active" to "Inactive". Work that would add a new row, such as Convert To, Install, Bank Move To, or Reconfigure To, takes the information in each row, runs it through a fuzzy match to make sure the information is correct, and inserts it into the Slot Master Table as "Active", with incrementing [key values](#key).
+
+Since the Slot Master Table holds direct information, as opposed to using a [referenced table](#reference-table), updating themes, cabinet, vendors, or any other repeating information has to be done in bulk. Depending on access permissions, some users do have access to the direct Slot Master Table through AppSheets. Editing the Slot Master Table should be done carefully, as the [Slot Master View](#3-slot-master-view) relies on the data in the Slot Master Table to be exact. A single character off in a Theme, Cabinet, or Vendor will result in that entry not being referenced.
+
+## 3) <a>Slot Master (View)</a>
+[Top](#table-of-contents)
+
+The Slot Master View, as the name suggests, is a built out [MSSQL View](#view-mssql). Slot Master View is made by passing the [Slot Master Tabe](#2-slot-master-table) through reference tables, matching on the reference table output, rather than the reference key. When joined this way, Slot Master View returns a pre-reference version of the Slot Master Table. This is done to connect references for Themes, Cabinets, Vendors, Casinos, Tribes, States, Bill Validators, Printers, and Player Tracking Systems, and giving the user the ability to see other entries related to what they are looking at. The goal is to connect as many different data sources together, allowing the user to get a bigger picture and a more rounded understanding of where everything is.
