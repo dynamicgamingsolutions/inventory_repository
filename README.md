@@ -61,7 +61,7 @@ The Dynamic Gaming Solutions Asset Database Includes -
 
 **K**
 
-*Key* - A single column that contains unique identifiers for each row. Keys exist for both reference and standard data sets. The default key is the row number, but should be replaced with another column. **Note:** *Duplicate key entries can result in broken references and mismatched data.*
+*<a>Key</a>* - A single column that contains unique identifiers for each row. Keys exist for both reference and standard data sets. The default key is the row number, but should be replaced with another column. **Note:** *Duplicate key entries can result in broken references and mismatched data.*
 
 **L**
 
@@ -69,7 +69,7 @@ The Dynamic Gaming Solutions Asset Database Includes -
 
 **R**
 
-*<a>References</a>*
+*<a>References</a>* - Connections between tables and related information. The most common way to use references is to call a row's [key](#key), rather than inserting the information directly. References allow users to update an individual row, and have all references be updated simultaneously. When a reference is used to display values from another column, the value displayed is the label. References can also be applied as `ref_row()`, which can call a table view of the referenced data within either a detail or deck view. Columns using `ref_row()` are [virtual columns](#virtual-column) where the data within cannot be edited.
 
 **V**
 
@@ -84,9 +84,10 @@ The Dynamic Gaming Solutions Asset Database Includes -
     - Card - Gives both simple information and image options that can be in a single view, along with options for up to four actions.
     - Onboarding - Takes data and prompts the individual to run through each row individually. This is useful for basic instructions, or for introducing new views or features.
     - Dashboard - This can host multiple views that would not normally be viewable together in one view. All the above mentioned view types can be shown in a dashboard, and accessed independently from it.
-    - Detail - A reference view based on the information in the data set of the view currently displayed. This allows users to drill down to show as much information as needed for each row. Detail views cannot be opened in Dashboards, but are one of the view that can be shown concurrently in other views. Detail views will appear on the right side of the screen when an entry is selected. Detail views can also link and display [references](#references) for the data within the view.
+    - Detail - A reference view based on the information in the data set of the view currently displayed. This allows users to drill down to show as much information as needed for each row. Detail views cannot be opened in Dashboards, but are one of the view that can be shown concurrently in other views. Detail views will appear on the right side of the screen when an entry is selected. Detail views can also link and display [references](#references) for the data within the view, including detail drill downs and reference row tables.
+    - Form - Same as Detail, but for either adding or editing rows. If adding a row, and blank form will generate, while editing generated a form with the current row's information on it. Columns can be restricted from editing, required, have its information auto-generated, or hidden. [Virtual Columns](#virtual-column) cannot be edited.
 
-*<a>Virtual Column</a>*
+*<a>Virtual Column</a>* - Columns that can be generated using other columns from the data set or other data sets within the application. Virtual columns are often used for basic math operations, connecting groups of text, or referencing other data sets. Virtual columns do not store data, and are not editable in form views.
 
 
 ## 2) <a>Slot Master (Table)</a>
