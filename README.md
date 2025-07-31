@@ -10,6 +10,7 @@ The Dynamic Gaming Solutions Asset Database Includes -
 2. [Slot Master (Table)](#2-slot-master-table)
 3. [Slot Master (View)](#3-slot-master-view)
 4. [Slot Master (References)](#4-slot-master-references)
+5. [Slot Master (Features)](#5-slot-master-features)
 
 
 ## 1) <a>Glossary</a>
@@ -217,3 +218,8 @@ Because of this, if a user wished to update the information of a single referenc
 - Boot bios
 - Operating System
 - Conversion/Install dates
+
+## 5) <a>Slot Master (Features)</a>
+[Top](#table-of-contents)
+
+There are two ways to get to the Slot Master in AppSheets. First is a Slot Master button on the menu that gets the user to a full list of all active machines. This view is used for total counts of vendors, cabinets, and themes. The second is through the casino view. Clicking on a casino with active machines will open the casino detail view on the right hand side of the screen. The top section will have casino specific information, the bottom will have a [reference list](#references) from Slot Master with a button that says "Expand" underneath. Clicking "Expand" will take the user to a version of Slot Master, but filtered for only active themes in the casino selected. 
