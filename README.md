@@ -37,16 +37,18 @@ The Dynamic Gaming Solutions Asset Database Includes -
 
 *Table* - A data structure containing raw data in the forms of text, numbers, dates, booleans (true/false), and even JSON (secondary data structures). This is where data is directly stored.
 
+*Trigger* - A process that acts automatically upon `INSERT`, `UPDATE`, or `DELETE`, without the need for user intervention. Triggers can run calculations to fill in related columns, update information on other rows, insert rows into other tables, and  many other processes. 
+
 **V**
 
 *View* - A structured query that is accessible similarly to a table. Information is not stored in a view, but can be pulled like a table into Excel, Google AppSheet, and other sources. References, algorithems, and root calls can be used in a view, but cannot be changed later.
 
 ### Google AppSheet References
 
-**D*
+**D**
 
 *Data* - This is any source that Google AppSheet pulls from. There are several different sources that can be used.
-- Google Sheets - Simple to work with, but easy to mess up. Google AppSheet requires its data structures to be a stable and inmoving as possible. While Google Sheets is something that may people are capable of using on a basic level, that can lead to the temptation to interact and belief that AppSheets runs as simply as Sheets. This can caues massive errors, and lose column formulas and references.
+- Google Sheets - Simple to work with, but easy to mess up. Google AppSheet requires its data structures to be a stable and consistent as possible. While Google Sheets is something that many people are capable of using on a basic level, that can lead to the temptation to interact with it and belief that AppSheets runs as simply as Sheets. This can cause massive errors, and corrupt column formulas and references.
 
 - SQL - While SQL comes in many different "flavors", they still share many roots. Unless a dedicated GUI (Graphic User Interface) is applied, most interations with any SQL database is going to be through a IDE (Integrated Development Environment). This is where you might see an entry similar to the following - 
 
@@ -56,6 +58,35 @@ The Dynamic Gaming Solutions Asset Database Includes -
     SELECT * FROM slot_master
     ```
     AppSheets works as a GUI, allowing common users to interact with the data, while protecting it by simple "barrier to entry" principles. The harder it is to change something, the harder it is to breake it. 
+
+**K**
+
+*Key* - A single column that contains unique identifiers for each row. Keys exist for both reference and standard data sets. The default key is the row number, but should be replaced with another column. **Note:** *Duplicate key entries can result in broken references and mismatched data.*
+
+**L**
+
+*<a>Label</a>* - Columns displayed for quick reference and used as headers for the information. Data can have one non-image label and one image label. The best labels are the ones that most users would recognize as what the entry is. 
+
+**R**
+
+*<a>References</a>*
+
+**V**
+
+*View* - Any area that displays data is a view, and multiple views can be seen at once. Views come in several types and positions.
+1) Types:
+    - Table - Simple rows and columns to display data, similar to an Excel table setup.
+    - Deck - Similar to a Table, Decks come in row formats, but only show basic information. Unlike a table, a Deck can store reference links and reference tables directly, rather than requiring a detail view to hold that information.
+    - Gallery - Like a Deck, it only shows limited information. The information is limited to the "[Label](#google-appsheet-label)" and an image. All other information is pulled from a Detail view.
+    - Map - If addressed or longitude & latitude columns are available, then a map can show the location of entries on an integrated Google Maps view.
+    - Calendar - If date information is available, then a calendar is available with both start and end dates as options. If time is also available, then start and end times are also available. **Time options cannot be applied without a date.**
+    - Chart - Gives multiple chart options to plot numerical data. The non-image "[Label](#google-appsheet-label)" column is used to mark the data, and multiple number columns can be used to display data and relations for comparisons. 
+    - Card - Gives both simple information and image options that can be in a single view, along with options for up to four actions.
+    - Onboarding - Takes data and prompts the individual to run through each row individually. This is useful for basic instructions, or for introducing new views or features.
+    - Dashboard - This can host multiple views that would not normally be viewable together in one view. All the above mentioned view types can be shown in a dashboard, and accessed independently from it.
+    - Detail - A reference view based on the information in the data set of the view currently displayed. This allows users to drill down to show as much information as needed for each row. Detail views cannot be opened in Dashboards, but are one of the view that can be shown concurrently in other views. Detail views will appear on the right side of the screen when an entry is selected. Detail views can also link and display [references](#google-appsheet-references) for the data within the view.
+
+*<a>Virtual Column</a>*
 
 
 ## 2) <a>Slot Master (Table)</a>
