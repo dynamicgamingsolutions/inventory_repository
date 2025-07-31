@@ -21,7 +21,7 @@ The Dynamic Gaming Solutions Asset Database Includes -
 
 **R**
 
-*Reference Table* - 
+*Reference Table* - A reference table may also be called a Type 0 SDC. These table are not ment to change (to an extent). While changes may be needed as new information comes out, the changes affect all other tables that use the reference table. For instance, if DGS was working with a casino called "Golden Eagle" in Oklahoma for several years, then comes across another "Golden Eagle" in Kansas, updating the casino reference table entry of Golden Eagle in Oklahoma to "Golden Eagle OK" would change all references of the casino, allowing another "Golden Eagle" to be entered, without having to hunt down all instances of the original.
 
 **S**
 
@@ -41,7 +41,24 @@ The Dynamic Gaming Solutions Asset Database Includes -
 
 *View* - A structured query that is accessible similarly to a table. Information is not stored in a view, but can be pulled like a table into Excel, Google AppSheet, and other sources. References, algorithems, and root calls can be used in a view, but cannot be changed later.
 
+### Google AppSheet References
+
+**D*
+
+*Data* - This is any source that Google AppSheet pulls from. There are several different sources that can be used.
+- Google Sheets - Simple to work with, but easy to mess up. Google AppSheet requires its data structures to be a stable and inmoving as possible. While Google Sheets is something that may people are capable of using on a basic level, that can lead to the temptation to interact and belief that AppSheets runs as simply as Sheets. This can caues massive errors, and lose column formulas and references.
+
+- SQL - While SQL comes in many different "flavors", they still share many roots. Unless a dedicated GUI (Graphic User Interface) is applied, most interations with any SQL database is going to be through a IDE (Integrated Development Environment). This is where you might see an entry similar to the following - 
+
+    ```sql
+    USE analytics
+    GO
+    SELECT * FROM slot_master
+    ```
+    AppSheets works as a GUI, allowing common users to interact with the data, while protecting it by simple "barrier to entry" principles. The harder it is to change something, the harder it is to breake it. 
+
+
 ## 2) <a>Slot Master (Table)</a>
 [Top](#table-of-contents)
 
-The Slot Master Table currentl
+The Slot Master Table
