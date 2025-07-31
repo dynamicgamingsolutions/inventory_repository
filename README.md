@@ -50,7 +50,7 @@ The Dynamic Gaming Solutions Asset Database Includes -
 *Data* - This is any source that Google AppSheet pulls from. There are several different sources that can be used.
 - Google Sheets - Simple to work with, but easy to mess up. Google AppSheet requires its data structures to be a stable and consistent as possible. While Google Sheets is something that many people are capable of using on a basic level, that can lead to the temptation to interact with it and belief that AppSheets runs as simply as Sheets. This can cause massive errors, and corrupt column formulas and references.
 
-- SQL - While SQL comes in many different "flavors", they still share many roots. Unless a dedicated GUI (Graphic User Interface) is applied, most interations with any SQL database is going to be through a IDE (Integrated Development Environment). This is where you might see an entry similar to the following - 
+- SQL - While SQL comes in many different "flavors", they still share many roots. Unless a dedicated GUI (Graphic User Interface) is applied, most interactions with any SQL database is going to be through a IDE (Integrated Development Environment). This is where you might see an entry similar to the following - 
 
     ```sql
     USE analytics
