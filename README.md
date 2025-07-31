@@ -7,7 +7,8 @@ The Dynamic Gaming Solutions Asset Database Includes -
 - Asset Table (Table)
 
 ## *<a>Table of Contents</a>* 
-1. [Glossary](#glossary)
+1. [Glossary](#1-glossary)
+1. [Slot Master (Table)](#2-slot-master-table)
 
 
 ## 1) <a>Glossary</a>
@@ -40,6 +41,7 @@ The Dynamic Gaming Solutions Asset Database Includes -
 
 *View* - A structured query that is accessible similarly to a table. Information is not stored in a view, but can be pulled like a table into Excel, Google AppSheet, and other sources. References, algorithems, and root calls can be used in a view, but cannot be changed later.
 
-2) Slot Master (Table)
+## 2) <a>Slot Master (Table)</a>
+[Top](#table-of-contents)
 
 The Slot Master Table currentl
