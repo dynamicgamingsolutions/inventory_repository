@@ -244,4 +244,4 @@ After navigating to the Slot Master, the user will be met with a [table](#view-a
 
 Clicking on any of the rows will open another detail, this time with information on the individual machine. At the top of the detail view is the basic information on the casino, so the user doesn't have to go back and forth between the casino and slot master views.
 
-<img src="https://github.com/dynamicgamingsolutions/inventory_repository/blob/main/img/img_Slot%20Master%20Button.png" width="1366" alt="slot master view"/>
+<img src="https://github.com/dynamicgamingsolutions/inventory_repository/blob/main/img/img_Slot%20Master%20View.png" width="1366" alt="slot master view"/>
