@@ -226,6 +226,6 @@ There are two ways to get to the Slot Master in AppSheets. First is a Slot Maste
 
 <img src="https://github.com/dynamicgamingsolutions/inventory_repository/blob/main/img/img_Slot%20Master%20Button.png" width="1366" alt="location of buttons"/>
 
-<img src="https://github.com/dynamicgamingsolutions/inventory_repository/blob/main/img/img_Lease.png" align="right" width="100" alt="floppy disk"/>
+<img src="https://github.com/dynamicgamingsolutions/inventory_repository/blob/main/img/img_Lease.png" align="right" width="250" alt="floppy disk"/>
 
 By default, the casino view contains all casinos we have on our routes. If the user wishes, there are two buttons up top to filter the casinos between prospecting (digging button) and active leases (percent button). 
