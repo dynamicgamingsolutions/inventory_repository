@@ -224,4 +224,4 @@ Because of this, if a user wished to update the information of a single referenc
 
 There are two ways to get to the Slot Master in AppSheets. First is a Slot Master button on the menu that gets the user to a full list of all active machines. This view is used for total counts of vendors, cabinets, and themes. The second is through the casino view. Clicking on a casino with active machines will open the casino detail view on the right hand side of the screen. The top section will have casino specific information, the bottom will have a [reference list](#references) from Slot Master with a button that says "Expand" underneath. Clicking "Expand" will take the user to a version of Slot Master, but filtered for only active themes in the casino selected. 
 
-<img src="https://github.com/dynamicgamingsolutions/inventory_repository/blob/main/img/img_Slot%20Master%20Button.png" width="840" alt="location of buttons"/>
+<img src="https://github.com/dynamicgamingsolutions/inventory_repository/blob/main/img/img_Slot%20Master%20Button.png" width="1366" alt="location of buttons"/>
